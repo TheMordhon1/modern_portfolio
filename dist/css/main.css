@@ -55,7 +55,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background-image: url("../dist/img/TheMordhon.png");
+      background: url("../dist/img/TheMordhon.png");
       border-radius: 50%;
       border: solid 3px #eece1a; }
   .menu .nav-item {
@@ -183,11 +183,68 @@ main {
     padding: 0.5rem;
     border-bottom: 5px solid #eece1a; }
 
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 0.5s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #fff;
+    height: 60px; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #b3b3b3;
+  color: #333; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #1a1a1a;
   color: #fff; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -217,7 +274,9 @@ main {
       height: 130px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 400px) {
   main#home h1 {
@@ -225,4 +284,11 @@ main {
     font-size: 3.7rem; }
   main#about h1 {
     margin-top: 10vh;
-    font-size: 3.7rem; } }
+    font-size: 3.7rem; }
+  main#work h1 {
+    margin-top: 10vh;
+    font-size: 3.7rem; }
+  .projects {
+    grid-template-columns: 1fr;
+    width: 220px;
+    margin-left: -31px; } }
